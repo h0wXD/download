@@ -52,7 +52,7 @@
         		ajax.open( "GET", url, true);
         		ajax.responseType = 'blob';
         		ajax.onload= function(e){
-				  download(e.target.response, fileName, defaultMime);
+				  download(e.target.response, fileName, e.target.response.type || defaultMime);
 				};
         		setTimeout(function(){ ajax.send();}, 0); // allows setting custom ajax headers using the return:
 			    return ajax;
